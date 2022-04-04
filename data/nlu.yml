@@ -1,0 +1,157 @@
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
+    - good evening
+    - hello sevak
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+  
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes sir i have [chest pain](chest-pain)
+    - yes sir I m suffering from [fever](fever) also 
+    - yes sir, I had [very high fever](fever) yeasterday night
+    - yeah ,I am feeling [very cold](cold)
+    - yes, yesterday night it was [very cold](cold)
+    - yes sir, feeling very [tired](tiredness) now a days
+    - yeah, I have tirednes also
+    - yup
+    - yeah, everything feels [tasteless](loss-of-taste) 
+    - yes, I feel i m loosing my taste
+    - yea I dont feel any taste in anything 
+    - yeah , i am having deifficulty in breathing 
+    - yeah , it is difficult for me to breath
+    - yes sir, breathing seems to be difficult
+    - yes, i feeel pain in chest while breathing
+    - yeah, chest pain also 
+    - yes, it pain but only sometimes 
+    - yeah , I am feeling [cold](cold) now a days
+    - yeah ,I have [cough](cough) but not that serious
+    - yes sir, feeling very [tired]{"entity": "tiredness", "value": "tiredness"}
+    - yeah, my taste also gone
+
+- intent: deny
+  examples : |
+    - no
+    - not 
+    - never
+    - nup
+    - no, i don't have any other symptoms
+    - no i dont have [cold](cold)
+    - no i dont have [fever](fever)
+    - nup, i dont feel i have [fever](fever)
+    - not accually, 
+    - no, no [caugh](caugh) at all
+    - not exactly [rough caugh](caugh),  
+    - no i am not [tired](tiredness)
+    - i dont think i am [tired](tiredness)
+    - no , my breathing is normal 
+    - no, I have my taste buds working fine 
+    - no, i dont feel any kind of [difficulty in breathing](difficulty-in-breathing)
+    - no, my chest doesn't pain at all
+    - no i dont feeel any difficulty
+    - No I dont have any kind of [fever](fever)
+    - not so difficult, i think that is normal
+
+- intent: thank
+  examples: |
+    - Thanks a lot for your time
+    - Thanks a lot for your advice Doctor
+    - Thanks a lot for your advice
+    - Thanks a lot for your time Doctor
+    - Really appreciate your time a lot Doctor.
+
+- intent: health_problem
+  examples: |
+    - I an suffering from [fever]{"entity":"fever"} from [last night]{"entity":"time-period"}
+    - I feel very tired, short tempered and I have a [headache]{"entity":"other-symptom"}.
+    - I had a [fever]{"entity":"fever"} from [Friday to yesterday]{"entity":"time-period"} along with a [cough]{"entity":"cough"}
+    - I have a [cough]{"entity":"cough"} that seems to be recursive. It occurs usually at [night time]{"entity":"time-period"}, or if I gave a very intense sneeze or laugh.
+    - I am feeling [tired]{"entity":"tiredness", "value":"tiredness"}, is it possible that i am infected by covid
+    - My [brother]{"entity":"relative"} have [fever]{"entity":"fever"}, is he infected
+    - I have had [cold symptoms]{"entity":"cold", "value":"cold"} for [over a week]{"entity":"time-period"} and had a [low grade fever]{"entity":"fever", "value":"fever"} [last week]{"entity":"time-period"}. For the past two days I have been [feeling dizzy]{"entity": "tiredness"}.
+    - Is there any chance I got covid-19?
+    - Hello Doctor, I have [Headache]{"entity":"other-symptom","value":"headache"}, fever and [fatigue]{"entity":"tiredness", "value":"tiredness"}. I have Been in contact with someone with coronavirus
+    - If I have had a sore throat for 3 days but with no [fever](fever) should I be tested for COVID-19?
+    - Hi Doctor, Intermittent [headache]{"entity":"other-symptom","value":"headache"} for the last week, comes and goes. Also, scratchy throats for about [3 weeks]{"entity":"time-period"} on and off?
+    - Sore throat, [ear ache]{"entity":"other-symptom"}, [headache]{"entity":"other-symptom","value":"headache"} and a [light cough]{"entity":"cough", "value":"cough"}. Do I need to worry?
+    - I have Nasal congestion and feeling a bit fluey. Do I have covid-19?
+    - I think I have Coronavirus. I have had chest pains [since yesterday]{"entity":"time-period"} and during the course of today
+    - I have had a very painful pain in my throat [since this morning]{"entity":"time-period"}?
+    - Can having recurring strep throat/tonsillitis problems make you more vulnerable to the Coronavirus
+    - I have runny nose with [mucus cough]{"entity":"cough","value":"cough"}. Possibly allergy, they are engaged in cultivations at work.
+    - I also have a headache.
+    - Hello Doctor, I have a [wet cough]{"entity":"cough","value":"cough"}. Stuffy nose and sometimes get a headache. I took my temperature and it is normal but my [cough]{"entity":"cough"} is starting to get worse.
+    - Hi Doctor, I have been experiencing flu symptoms for [about 7 days]{"entity":"time-period"}, symptoms include: productive [cough]{"entity":"cough"} and running nose
+    - I have chest congestion and I feel heavy when I breathe.
+    - My sinuses usually act up during seasonal change. My worry is my symptoms resemble that of covid-19. 
+    - Throat has been a bit irritated, lately my nose has been runny.
+    - I've been having the same symptoms as for CoronaVirus
+    - Hi there, Me and my 7 year old have flu like symptoms. Should I get tested for COVID-19?
+    -  I have a dry throat. Sometimes it feels like there is something stuck or putting pressure on my throat?
+    - The cough started more than a week ago. Should I be concerned?
+    - I was confirmed to have covid-19, I self-isolated for 14 days. My concern is with my 1 year 6 months [son]{"entity": "relative"} who has been coughing?
+    - Since last week, I have been losing weight. Mid last week it was 62 odd and today when I checked, it was 61.35.
+    - Hello Doctor, If I'm not sure if I have allergies or coronavirus (or something else), should I still stay home?
+    - I am having [fever](fever) from [last night](time-period)
+    - I have [caugh](cough) also
+    - I have caugh and feeling [tired]{"entity": "tiredness", "value": "tiredness"}
+    - I dont feel any kind of [taste]("entity":"loss-of-taste", "value":"loss-of-taste")
+    - Everything seems to be [tasteless]("entity":"loss-of-taste", "value":"loss-of-taste") for a few days
+    - I am feeling [tired]{"entity":"tiredness","value":"tiredness"} and [loosing my taste]{"entity":"loss-of-taste" ,"value":"loss-of-taste"}.
+    - I have a [chestpain]{"entity": "chest-pain", "value":"chest-pain"} and facing [difficulty in breathing]{"entity":"difficulty-in-breathing", "value":"difficulty-in-breathing" }.
+    - Since past 2 days having very [pain in chest]{"entity":"chest-pain", "value":"chest-pain"}.
+    - I have [chestpain]{"entity": "chest-pain", "value": "chest-pain"}
+    - I have [high](fever) [fever](fever) and feeling [pain in chest]{"entity": "chest-pain", "value": "chest-pain"} for 3 days
+    - I have [high](fever) [fever](fever)
+- intent: covid_risk
+  examples : |
+    -What is my risk of dying from coronavirus, as I have type 1 diabetes
+    -Hi Doctor, I have been exposed to someone with corona in the last week and a half on a daily basis. Should I get tested immediately
+- intent: ask_for_advice
+  examples : |
+    - Hi Doctor, With a bad immunity deficiency, how can I keep as safe as possible from contracting COVID-19 in a family household
+    - What should i do or follow then
+    - What to do or follow in crowded places?
+    - What if I came in contact with an infected person?
+    - What should i do as a precaution?
+    
+- intent: covid_test_advice
+  examples: |
+    - What steps do I need to take going forward?
+    - I have a malaise, headache and a sore throat now for a week. There is a covid 19 contact in our estate. Should I test for it?
+    - Hello Doctor, Wanted to find out whether I should get tested for Covid-19\
+    - I have no symptoms. Is it possible to opt to get tested?
+    - Should i do a covid-19 test?
+    - Wanted to know how I could get myself tested?
+    - So should i do covid-19 test?
+    - Do I need to get tested for covid-19. Living with a person who returned from Canada
+    
+
+- lookup: other-symptom
+  examples: |
+    - headache
+- lookup: relative
+  examples: |
+    - mother
+    - father
+    - sister
+    - brother
+    - husband
+    - wife 

@@ -1,0 +1,80 @@
+
+version: "3.0"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: health_problem
+    entities:
+    - chest-pain: chest-pain
+  - slot_was_set:
+    - chest-pain: chest-pain
+  - action: symptoms_form
+  - active_loop: symptoms_form
+  - slot_was_set:
+    - requested_slot: fever
+  - slot_was_set:
+    - fever: fever
+  - slot_was_set:
+    - fever: false
+  - slot_was_set:
+    - requested_slot: cold
+  - slot_was_set:
+    - cold: cold
+  - slot_was_set:
+    - cold: true
+  - slot_was_set:
+    - requested_slot: cough
+  - slot_was_set:
+    - cough: cough
+  - slot_was_set:
+    - cough: true
+  - slot_was_set:
+    - requested_slot: tiredness
+  - slot_was_set:
+    - tiredness: tiredness
+  - slot_was_set:
+    - tiredness: true
+  - slot_was_set:
+    - requested_slot: loss-of-taste
+  - slot_was_set:
+    - loss-of-taste: true
+  - slot_was_set:
+    - requested_slot: difficulty-in-breathing
+  - slot_was_set:
+    - difficulty-in-breathing: false
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_symptoms
+  - action: utter_submit
+  - intent: greet
+  - action: utter_greet
+  - intent: health_problem
+    entities:
+    - fever: high
+    - fever: fever
+    - chest-pain: chest-pain
+  - slot_was_set:
+    - fever: fever
+  - action: symptoms_form
+  - active_loop: symptoms_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_symptoms
+  - action: utter_submit
+  - intent: health_problem
+    entities:
+    - fever: high
+    - fever: fever
+  - action: symptoms_form
+  - active_loop: symptoms_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_symptoms
+  - action: utter_submit
+  - intent: thank
+  - action: utter_coversation_end

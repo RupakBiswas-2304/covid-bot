@@ -1,0 +1,47 @@
+stories:
+  - story: greet and ask for advice 1
+    steps:
+    - intent : greet
+    - action : utter_greet
+    - intent : ask_for_advice
+    - action : utter_test_covid
+    - intent : thank
+    - action : utter_coversation_end
+
+  # - story:  greet and ask symptoms
+  #   steps:
+  #   - intent : greet
+  #   - action : utter_greet
+  #   - intent : health_problem
+  #     entities:
+  #     - symptom : fever 
+  #   - slot_was_set:
+  #     - symptomps : [fever]
+  #   - action : action_symptoms
+  #   - intent : thank
+  #   - action : utter_coversation_end
+
+  # - story:  health probmlem 1
+  #   steps:
+  #   - intent : greet
+  #   - action : utter_greet
+  #   - intent : health_problem
+  #   - action :  utter_ask_other_symptoms
+  #   - checkpoint : another_symptoms 
+  
+  # - story: Story Number 2
+  #   steps: 
+  #   - checkpoint: another_symptoms
+  #   - intent: affirm
+  #   - intent: health_problem
+  #   - action: utter_ask_other_symptoms
+  #   - checkpoint: another_symptoms
+
+
+  # - story: Story Number 3
+  #   steps: 
+  #   - checkpoint: another_symptoms
+  #   - intent: deny
+  #   - action : action_symptoms
+  #   - intent : thank
+  #   - action : utter_coversation_end

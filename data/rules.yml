@@ -1,0 +1,27 @@
+rules:
+  - rule: Active From
+    steps:
+    - intent : health_problem
+    - action : symptoms_form
+    - active_loop : symptoms_form
+
+  - rule : Submit form
+    condition:
+    - active_loop : symptoms_form
+    steps:
+    - action : symptoms_form
+    - active_loop : null
+    - slot_was_set:
+      - requested_slot : null
+    - action : action_symptoms
+    - action : utter_submit
+
+  - rule : greeting
+    steps:
+    - intent : greet
+    - action : utter_greet
+
+  - rule : conversation end
+    steps:
+    - intent : thank
+    - action : utter_coversation_end

@@ -1,0 +1,24 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - Hello
+- intent: health_problem
+  examples: |
+    - I have [chestpain]{"entity": "chest-pain", "value": "chest-pain"}
+    - I have [high](fever) [fever](fever) and feeling [pain in chest]{"entity": "chest-pain", "value": "chest-pain"} for 3 days
+    - I have [high](fever) [fever](fever)
+- intent: deny
+  examples: |
+    - No I dont have any kind of [fever](fever)
+    - not so difficult, i think that is normal
+- intent: affirm
+  examples: |
+    - yeah , I am feeling [cold](cold) now a days
+    - yeah ,I have [cough](cough) but not that serious
+    - yes sir, feeling very [tired]{"entity": "tiredness", "value": "tiredness"}
+    - yeah, my taste also gone
+- intent: thank
+  examples: |
+    - thanks sir for you time

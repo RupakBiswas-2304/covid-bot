@@ -1,0 +1,110 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- health_problem
+- greet
+- goodbye
+- affirm
+- thank
+- covid_risk
+- ask_for_advice
+- covid_test_advice
+- deny
+entities:
+- cold
+- cough
+- fever
+- other-symptom
+- relative
+- time-period
+- tiredness
+slots:
+  fever:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: fever
+  cold:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: cold
+  cough:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: cough
+  tiredness:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: tiredness
+responses:
+  utter_greet:
+  - text: |
+      Hello! How can I help you?
+  - text: |
+      Hi!
+  utter_problem_detected:
+  - text: |
+      You might have covid , custom action comming soon .
+  utter_coversation_end:
+  - text: |
+      No problem, Glad to be of help. Take care. 
+  - text: |
+      No worries, Take care and stay safe.
+  utter_test_covid:
+  - text: |
+      Test if you can 
+  - text: |
+      you should test rt-pcr immidiyetly
+  utter_ask_other_symptoms:
+  - text: |
+      Do you have any other problems also ?
+  utter_ask_symptoms_form_fever:
+  - text: |
+      Do you have fever ?
+  - text: |
+      Do you have fever also ?
+  - text: |
+      Are you feeling any kind of fever?
+  utter_ask_symptoms_form_cold:
+  - text: |
+      Do you have cold ?
+  - text: |
+      Do you have mild cold ?
+  - text: |
+      Are you feeling any kind of cold?
+  utter_ask_symptoms_form_cough:
+  - text: |
+      Do you have cough ?
+  - text: |
+      Do you have rough cough ?
+  - text: |
+      Are you feeling any kind of cough?
+  utter_ask_symptoms_form_tiredness:
+  - text: |
+      Do you have tiredness ?
+  - text: |
+      Are you feeling tired?
+  utter_submit:
+  - text: |
+      You have submitted the form 
+actions:
+- action_symptoms
+- utter_coversation_end
+- utter_greet
+- utter_submit
+forms:
+  symptoms_form:
+    required_slots:
+    - fever
+    - cold
+    - cough
+    - tiredness
