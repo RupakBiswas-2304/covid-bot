@@ -2,6 +2,7 @@ rules:
   - rule: Active From
     steps:
     - intent : health_problem
+    # - action : utter_test
     - action : symptoms_form
     - active_loop : symptoms_form
 

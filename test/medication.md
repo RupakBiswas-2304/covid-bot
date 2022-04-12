@@ -1,0 +1,18 @@
+Asymptomatic cases, mild cases of COVID-19:
+Isolate yourself in a well ventilated room.
+Use a triple layer medical mask, discard mask after 8 hours of use or earlier if they become wet or visibly soiled. In the event of a caregiver entering the room, both caregiver and patient may consider using N 95 mask.
+Mask should be discarded only after disinfecting it with 1% Sodium Hypochlorite.
+Take rest and drink a lot of fluids to maintain adequate hydration.
+Follow respiratory etiquettes at all times.
+Frequent hand washing with soap and water for at least 40 seconds or clean with alcohol-based sanitizer.
+Don’t share personal items with other people in the household.
+Ensure cleaning of surfaces in the room that are touched often (tabletops, doorknobs, handles, etc.) with 1% hypochlorite solution.
+Monitor temperature daily.
+Monitor oxygen saturation with a pulse oximeter daily.
+Connect with the treating physician promptly if any deterioration of symptoms is noticed.
+Instructions for caregivers:
+Mask: The caregiver should wear a triple layer medical mask. N95 mask may be considered when in the same room with the ill person.
+Hand hygiene: Hand hygiene must be ensured following contact with ill person or patient’s immediate environment.
+Exposure to patient/patient’s environment: Avoid direct contact with body fluids of the patient, particularly oral or respiratory secretions. Use disposable gloves while handling the patient. Perform hand hygiene before and after removing gloves.
+
+
