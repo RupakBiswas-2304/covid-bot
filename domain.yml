@@ -31,7 +31,8 @@ actions :
 - action_ask_symptoms_form_cold
 - action_ask_symptoms_form_tiredness
 - action_ask_symptoms_form_chest-pain
-
+- action_ask_symptoms_form_loss-of-taste
+- action_ask_symptoms_form_difficulty-in-breathing
 slots:
   fever:
     type: bool
@@ -222,20 +223,20 @@ responses:
   #     Do you have tiredness ?
   # - text: |
   #     Are you feeling tired?
-  utter_ask_symptoms_form_loss-of-taste:
-  - text: |
-      Did you lost your taste ?
-  - text : |
-      Are you feeling any changes in taste ?
-  - text : |
-      And what about your taste ? 
-  utter_ask_symptoms_form_difficulty-in-breathing:
-  - text : |
-      Are you feeling any kind of difficulty in breathing ?
-  - text : |
-      Is it difficult to breath for you now a days ?
-  - text : |
-      How is your breathing recently ? are you feeling any kind of difficulty
+  # utter_ask_symptoms_form_loss-of-taste:
+  # - text: |
+  #     Did you lost your taste ?
+  # - text : |
+  #     Are you feeling any changes in taste ?
+  # - text : |
+  #     And what about your taste ? 
+  # utter_ask_symptoms_form_difficulty-in-breathing:
+  # - text : |
+  #     Are you feeling any kind of difficulty in breathing ?
+  # - text : |
+  #     Is it difficult to breath for you now a days ?
+  # - text : |
+  #     How is your breathing recently ? are you feeling any kind of difficulty
   # utter_ask_symptoms_form_chest-pain:
   # - text : |
   #     Are you feeling any kind of pain in chest ?

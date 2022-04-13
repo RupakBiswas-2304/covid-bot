@@ -181,7 +181,7 @@ class AskForFeverAction(Action):
 
 # - ---------------------------------- Custom ask function for Tiredness ------------------------------- 
 
-class AskForFeverAction(Action):
+class AskForTirednessAction(Action):
     def name(self) -> Text:
         return "action_ask_symptoms_form_tiredness"
 
@@ -225,7 +225,7 @@ class AskForFeverAction(Action):
 
 # -----------------------------CHEST PAIN CUSTOM SLOT---------------------------------
 
-class AskForCoughAction(Action):
+class AskForChestpainAction(Action):
     def name(self) -> Text:
         return "action_ask_symptoms_form_chest-pain"
 
@@ -260,6 +260,94 @@ class AskForCoughAction(Action):
                 f"Do you have Chestpain also ?",
                 "Do you have any kind of pain in chest?",
                 "Are you feeling any kind of chest pain?"
+            ]
+        msgs = msgs + more_msgs
+        print(msgs)
+
+        dispatcher.utter_message(text=random_string(msgs))
+        return []
+
+#-------------------------------loss of taste--------------------------------
+
+class AskForLossOfTasteAction(Action):
+    def name(self) -> Text:
+        return "action_ask_symptoms_form_loss-of-taste"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict):
+
+        relative = tracker.get_slot("relative")
+        print(relative, type(relative))
+        male = ["father","brother", "husband","friend"]
+        female = ["mother", "sister", "wife", "girlfriend"]
+        msgs = []
+        if (relative != None):
+            msgs = [
+                f"Does your {relative} lossed taste ?",
+                f"Do your {relative} have loss of taste also ?",
+            ]
+        more_msgs = []
+        if (relative in female):
+            more_msgs = [
+                f"Is she loosing taste ?",
+                f"She have losse of taste ?",
+                f"And she is not feeling any tast ?"
+            ]
+        elif (relative in male):
+            more_msgs = [
+                f"Is he loosing taste ?",
+                f"He have losse of taste ?",
+                f"And he is not feeling any tast ?"
+            ]
+        else :
+            more_msgs = [
+                f"Do you have loss of taste also ?",
+                "Do you have lossed your taste ?",
+                "You are not getting any taste, right ?"
+            ]
+        msgs = msgs + more_msgs
+        print(msgs)
+
+        dispatcher.utter_message(text=random_string(msgs))
+        return []
+
+# ------------------------- difficulty in breathing ---------------------------------
+
+class AskForDifficultyInBreathingAction(Action):
+    def name(self) -> Text:
+        return "action_ask_symptoms_form_difficulty-in-breathing"
+
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict):
+
+        relative = tracker.get_slot("relative")
+        print(relative, type(relative))
+        male = ["father","brother", "husband","friend"]
+        female = ["mother", "sister", "wife", "girlfriend"]
+        msgs = []
+        if (relative != None):
+            msgs = [
+                f"Does your {relative} difficulty i breathing ?",
+                f"Do your {relative} is facing difficulty in breathing also ?",
+            ]
+        more_msgs = []
+        if (relative in female):
+            more_msgs = [
+                f"Is she facing difficulty in breathing ?",
+                f"She have breathing problem also?",
+                f"She if suffering in breathing also ?"
+            ]
+        elif (relative in male):
+            more_msgs = [
+                f"Is he  facing difficulty in breathing?",
+                f"He have breathing problem also? ?",
+                f"He if suffering in breathing also ?"
+            ]
+        else :
+            more_msgs = [
+                f"Do you have difficulty in breathing ?",
+                "Are you facing difficulty in breathing ?",
+                "You can not breath properly, right?"
             ]
         msgs = msgs + more_msgs
         print(msgs)
