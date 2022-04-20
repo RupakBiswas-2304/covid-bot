@@ -104,7 +104,7 @@ nlu:
     - Throat has been a bit irritated, lately my nose has been runny.
     - I've been having the same symptoms as for CoronaVirus
     - Hi there, Me and my 7 year old have flu like symptoms. Should I get tested for COVID-19?
-    -  I have a dry throat. Sometimes it feels like there is something stuck or putting pressure on my throat?
+    - I have a dry throat. Sometimes it feels like there is something stuck or putting pressure on my throat?
     - The cough started more than a week ago. Should I be concerned?
     - I was confirmed to have covid-19, I self-isolated for 14 days. My concern is with my 1 year 6 months [son]{"entity": "relative"} who has been coughing?
     - Since last week, I have been losing weight. Mid last week it was 62 odd and today when I checked, it was 61.35.
@@ -120,6 +120,8 @@ nlu:
     - I have [chestpain]{"entity": "chest-pain", "value": "chest-pain"}
     - I have [high](fever) [fever](fever) and feeling [pain in chest]{"entity": "chest-pain", "value": "chest-pain"} for 3 days
     - I have [high](fever) [fever](fever)
+    - My [sister](relative) is suffering from [high fever](fever) can you help ?
+    - Sir, my [mom]{"entity":"relative","value":"mother"} is having [headache](other-symptom)
 - intent: covid_risk
   examples : |
     -What is my risk of dying from coronavirus, as I have type 1 diabetes
@@ -147,6 +149,7 @@ nlu:
 - lookup: other-symptom
   examples: |
     - headache
+    - diabetis
 - lookup: relative
   examples: |
     - mother
@@ -155,3 +158,5 @@ nlu:
     - brother
     - husband
     - wife 
+    - son
+    - daughter

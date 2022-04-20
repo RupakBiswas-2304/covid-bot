@@ -11,6 +11,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from .utility import *
 
+male = ["father","brother", "husband","friend", "son"]
+female = ["mother", "sister", "wife", "girlfriend","daughter"]
+
 
 class ActionSymptoms(Action):
     def name(self) -> Text:
@@ -36,14 +39,25 @@ class ActionSymptoms(Action):
             if ( i == False):
                 score =- 1
         
-        if (score == 7):
-            dispatcher.utter_message(text="You have high chances of having covid19 , please consult a doctor")
-        elif (score >= 4 and score <= 6):
-            dispatcher.utter_message(text="You have chances of having covid19 , please consult take rest, [medication comes here]")
-        elif (score >= 1 and score <= 3):
-            dispatcher.utter_message(text="You have low chances of having covid19 , please isolate your self and take rest")
+        relative = tracker.get_slot("relative")
+        # print(relative, type(relative))
+
+        x = ""
+        if relative in male:
+            x = "He"
+        elif relative in female : 
+            x = "She"
         else :
-            dispatcher.utter_message(text = "I don't think you may have covid19")
+            x = "You"
+
+        if (score == 7):
+            dispatcher.utter_message(text=f"{x} have high chances of having covid19 , please consult a doctor")
+        elif (score >= 4 and score <= 6):
+            dispatcher.utter_message(text=f"{x} have chances of having covid19 , please consult take rest, [medication comes here]")
+        elif (score >= 1 and score <= 3):
+            dispatcher.utter_message(text=f"{x} have low chances of having covid19 , please isolate your self and take rest")
+        else :
+            dispatcher.utter_message(text = f"I don't think {x} may have covid19")
         return []
 
 class AskForCoughAction(Action):
@@ -55,8 +69,8 @@ class AskForCoughAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
@@ -102,8 +116,8 @@ class AskForColdAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
@@ -146,8 +160,8 @@ class AskForFeverAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
@@ -190,8 +204,8 @@ class AskForTirednessAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
@@ -234,8 +248,8 @@ class AskForChestpainAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
@@ -278,8 +292,8 @@ class AskForLossOfTasteAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
@@ -322,8 +336,8 @@ class AskForDifficultyInBreathingAction(Action):
 
         relative = tracker.get_slot("relative")
         print(relative, type(relative))
-        male = ["father","brother", "husband","friend"]
-        female = ["mother", "sister", "wife", "girlfriend"]
+        # male = ["father","brother", "husband","friend"]
+        # female = ["mother", "sister", "wife", "girlfriend"]
         msgs = []
         if (relative != None):
             msgs = [
