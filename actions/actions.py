@@ -10,6 +10,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from .utility import *
+from rasa_sdk.events import SlotSet
 
 male = ["father","brother", "husband","friend", "son"]
 female = ["mother", "sister", "wife", "girlfriend","daughter"]
@@ -368,3 +369,21 @@ class AskForDifficultyInBreathingAction(Action):
 
         dispatcher.utter_message(text=random_string(msgs))
         return []
+
+# reset slot for symptoms
+class ResetSlot(Action):
+
+    def name(self):
+        return "action_reset_slot"
+
+    def run(self, dispatcher, tracker, domain):
+        return [SlotSet("fever", None),
+                SlotSet("cold", None),
+                SlotSet("cough", None),
+                SlotSet("tiredness", None),
+                SlotSet("loss-of-taste", None),
+                SlotSet("difficulty-in-breathing", None),
+                SlotSet("loss-of-taste", None),
+                SlotSet("chest-pain", None),
+                # SlotSet("relative", None),
+                ]

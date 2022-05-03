@@ -26,3 +26,4 @@ rules:
     steps:
     - intent : thank
     - action : utter_coversation_end
+    - action : action_reset_slot

@@ -23,6 +23,8 @@ entities :
 - chest-pain
 - time-period
 - relative
+- place
+- close-contact 
 
 actions :
 - action_symptoms
@@ -33,6 +35,7 @@ actions :
 - action_ask_symptoms_form_chest-pain
 - action_ask_symptoms_form_loss-of-taste
 - action_ask_symptoms_form_difficulty-in-breathing
+- action_reset_slot
 slots:
   fever:
     type: bool
@@ -165,6 +168,11 @@ slots:
     mappings : 
     - type : from_entity
       entity : relative
+  travell-history:
+    type : text
+    mappings :
+    - type : from_entity
+      entity : place
 forms:
   symptoms_form:
     required_slots:

@@ -124,8 +124,9 @@ nlu:
     - Sir, my [mom]{"entity":"relative","value":"mother"} is having [headache](other-symptom)
 - intent: covid_risk
   examples : |
-    -What is my risk of dying from coronavirus, as I have type 1 diabetes
-    -Hi Doctor, I have been exposed to someone with corona in the last week and a half on a daily basis. Should I get tested immediately
+    - Hello, I have been in [Delhi](place) last week, am i in risk ? 
+    - Hi Doctor, I have been exposed to someone with corona in the last week and a half on a daily basis. Should I get tested immediately
+    - Do I need to get tested for covid-19. Living with a person who returned from [Canada](place)
 - intent: ask_for_advice
   examples : |
     - Hi Doctor, With a bad immunity deficiency, how can I keep as safe as possible from contracting COVID-19 in a family household
@@ -133,6 +134,7 @@ nlu:
     - What to do or follow in crowded places?
     - What if I came in contact with an infected person?
     - What should i do as a precaution?
+    - What is my risk of dying from coronavirus, as I have type 1 diabetes
     
 - intent: covid_test_advice
   examples: |
@@ -143,7 +145,6 @@ nlu:
     - Should i do a covid-19 test?
     - Wanted to know how I could get myself tested?
     - So should i do covid-19 test?
-    - Do I need to get tested for covid-19. Living with a person who returned from Canada
     
 
 - lookup: other-symptom
