@@ -23,10 +23,19 @@ entities :
 - chest-pain
 - time-period
 - relative
+- place
+- close-contact 
 
 actions :
 - action_symptoms
-
+- action_ask_symptoms_form_cough
+- action_ask_symptoms_form_fever
+- action_ask_symptoms_form_cold
+- action_ask_symptoms_form_tiredness
+- action_ask_symptoms_form_chest-pain
+- action_ask_symptoms_form_loss-of-taste
+- action_ask_symptoms_form_difficulty-in-breathing
+- action_reset_slot
 slots:
   fever:
     type: bool
@@ -154,6 +163,16 @@ slots:
       conditions : 
       - active_loop : symptoms_form
         requested_slot : chest-pain
+  relative:
+    type : text
+    mappings : 
+    - type : from_entity
+      entity : relative
+  travell-history:
+    type : text
+    mappings :
+    - type : from_entity
+      entity : place
 forms:
   symptoms_form:
     required_slots:
@@ -186,55 +205,59 @@ responses:
   utter_ask_other_symptoms:
   - text: |
       Do you have any other problems also ?
-  utter_ask_symptoms_form_fever:
-  - text: |
-      Do you have fever ?
-  - text: |
-      Do you have fever also ?
-  - text: |
-      Are you feeling any kind of fever?
-  utter_ask_symptoms_form_cold:
-  - text: |
-      Do you have cold ?
-  - text: |
-      Do you have mild cold ?
-  - text: |
-      Are you feeling any kind of cold?
-  utter_ask_symptoms_form_cough:
-  - text: |
-      Do you have cough ?
-  - text: |
-      Do you have rough cough ?
-  - text: |
-      Are you feeling any kind of cough?
-  utter_ask_symptoms_form_tiredness:
-  - text: |
-      Do you have tiredness ?
-  - text: |
-      Are you feeling tired?
-  utter_ask_symptoms_form_loss-of-taste:
-  - text: |
-      Did you lost your taste ?
-  - text : |
-      Are you feeling any changes in taste ?
-  - text : |
-      And what about your taste ? 
-  utter_ask_symptoms_form_difficulty-in-breathing:
-  - text : |
-      Are you feeling any kind of difficulty in breathing ?
-  - text : |
-      Is it difficult to breath for you now a days ?
-  - text : |
-      How is your breathing recently ? are you feeling any kind of difficulty
-  utter_ask_symptoms_form_chest-pain:
-  - text : |
-      Are you feeling any kind of pain in chest ?
-  - text : |
-      Do you have any kind of chest pain ?
-  - text : |
-      Does your chest pains sometimes ?
+  # utter_ask_symptoms_form_fever:
+  # - text: |
+  #     Do you have fever ?
+  # - text: |
+  #     Do you have fever also ?
+  # - text: |
+  #     Are you feeling any kind of fever?
+  # utter_ask_symptoms_form_cold:
+  # - text: |
+  #     Do you have cold ?
+  # - text: |
+  #     Do you have mild cold ?
+  # - text: |
+  #     Are you feeling any kind of cold?
+  # utter_ask_symptoms_form_cough:
+  # - text: |
+  #     Do you have cough ?
+  # - text: |
+  #     Do you have rough cough ?
+  # - text: |
+  #     Are you feeling any kind of cough?
+  # utter_ask_symptoms_form_tiredness:
+  # - text: |
+  #     Do you have tiredness ?
+  # - text: |
+  #     Are you feeling tired?
+  # utter_ask_symptoms_form_loss-of-taste:
+  # - text: |
+  #     Did you lost your taste ?
+  # - text : |
+  #     Are you feeling any changes in taste ?
+  # - text : |
+  #     And what about your taste ? 
+  # utter_ask_symptoms_form_difficulty-in-breathing:
+  # - text : |
+  #     Are you feeling any kind of difficulty in breathing ?
+  # - text : |
+  #     Is it difficult to breath for you now a days ?
+  # - text : |
+  #     How is your breathing recently ? are you feeling any kind of difficulty
+  # utter_ask_symptoms_form_chest-pain:
+  # - text : |
+  #     Are you feeling any kind of pain in chest ?
+  # - text : |
+  #     Do you have any kind of chest pain ?
+  # - text : |
+  #     Does your chest pains sometimes ?
   utter_submit:
   - text: |
       Do you have any other problem ? 
   - text: |
       Are there any problem you want to consult about ? 
+
+  utter_test:
+  - text: |
+      Testing if this line is showing everytime

@@ -7,6 +7,7 @@ stories:
     - action : utter_test_covid
     - intent : thank
     - action : utter_coversation_end
+    - action : action_reset_slot
 
   # - story:  greet and ask symptoms
   #   steps:
